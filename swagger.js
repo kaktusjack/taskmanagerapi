@@ -3,16 +3,12 @@ const swaggerUi = require('swagger-ui-express');
 
 // Swagger configuration
 const swaggerOptions = {
-    swaggerDefinition: {
+    definition: { 
         openapi: '3.0.0',
         info: {
             title: 'Task Manager API',
             version: '1.0.0',
             description: 'API documentation for the Task Manager application',
-            contact: {
-                name: 'Developer',
-                email: 'developer@example.com',
-            },
         },
         servers: [
             {
@@ -21,11 +17,9 @@ const swaggerOptions = {
             },
         ],
     },
-    apis: ['./routes/*.js'], // Path to the API docs
+    apis: ['./routes/*.js'], 
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
-module.exports = (app) => {
-    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
-};
+module.exports = swaggerDocs; 
