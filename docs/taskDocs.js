@@ -2,24 +2,6 @@
  * @swagger
  * components:
  *   schemas:
- *     Task:
- *       type: object
- *       required:
- *         - title
- *         - status
- *       properties:
- *         _id:
- *           type: string
- *         title:
- *           type: string
- *         description:
- *           type: string
- *         status:
- *           type: string
- *           enum: [pending, in-progress, completed]
- *         createdAt:
- *           type: string
- *           format: date-time
  *     NewTask:
  *       type: object
  *       required:
@@ -73,7 +55,7 @@
  *         schema:
  *           type: string
  *           format: date
- *         description: Filter tasks created after a specific date
+ *         description: Filter tasks created after a specific date(YYYY-MM-DD)
  *       - in: query
  *         name: page
  *         schema:
@@ -88,7 +70,7 @@
  *         name: sortBy
  *         schema:
  *           type: string
- *         description: Sort by field (e.g., createdAt:desc)
+ *         description: Sort by field (createdAt:desc or createdAt:asc)
  *     responses:
  *       200:
  *         description: A list of tasks

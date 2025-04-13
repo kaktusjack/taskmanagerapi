@@ -14,8 +14,13 @@ const getAllTasks = async (req, res) => {
         if (req.query.status) {
             filter.status = req.query.status;
         }
+        if (req.query.createdAt) {
+            const date = new Date(req.query.createdAt);
+            if (!isNaN(date.getTime())) {
+                filter.createdAt = { $gte: date }; 
+            }
+        }
        
-
         // Sorting
         let sort = {};
         if (req.query.sortBy) {
