@@ -7,12 +7,11 @@ dotenv.config({ path: "./.env" });
 
 
 const db = process.env.DATABASE;
-
+//Db connection 
 const dbConnect = async () => {
   try {
     await mongoose.connect(db, {
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
+     
     });
     console.log("Database connection successfull");
   } catch (err) {

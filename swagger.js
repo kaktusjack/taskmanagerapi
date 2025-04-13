@@ -1,6 +1,6 @@
 const swaggerJsDoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
 
+const path = require('path');
 // Swagger configuration
 const swaggerOptions = {
     definition: { 
@@ -16,10 +16,16 @@ const swaggerOptions = {
                 description: 'Development server',
             },
         ],
+         
     },
-    apis: ['./routes/*.js'], 
+    
+    apis: [
+        path.join(__dirname, './docs/*.js'),   
+        path.join(__dirname, './routes/*.js'), 
+      ],
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
+
 
 module.exports = swaggerDocs; 
