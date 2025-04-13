@@ -20,6 +20,38 @@
  *         createdAt:
  *           type: string
  *           format: date-time
+ *      NewTask:
+ *       type: object
+ *      required:
+ *        - title
+ *       - description
+ *      properties:
+ *        title:
+ *          type: string
+ *         description: Title of the task
+ *        description:  
+ *         type: string
+ *        description: Description of the task
+ *       UpdateTask:
+ *          type: object
+ *          properties:
+ *              title:
+ *                  type: string
+ *                  description: Title of the task
+ *              description:
+ *                  type: string
+ *                  description: Description of the task
+ *              status:
+ *                  type: string
+ *                  enum: [pending, in-progress, completed]
+ *                 description: Status of the task
+ * *        UpdateStatus:
+ *              type: object
+ *                properties:
+ *                  status:
+ *                   type: string
+ *                   enum: [pending, in-progress, completed]
+ *                   description: Status of the task
  */
 /**
  * @swagger
@@ -89,7 +121,7 @@
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Task'
+ *             $ref: '#/components/schemas/NewTask'
  *     responses:
  *       201:
  *         description: Task created successfully
@@ -115,7 +147,7 @@
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Task'
+ *             $ref: '#/components/schemas/UpdateTask'
  *     responses:
  *       200:
  *         description: Task updated
@@ -160,12 +192,8 @@
  *       required: true
  *       content:
  *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               status:
- *                 type: string
- *                 example: completed
+ *            schema:
+ *             $ref: '#/components/schemas/UpdateStatus'
  *     responses:
  *       200:
  *         description: Task status updated
