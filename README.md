@@ -28,3 +28,11 @@ A RESTful Task Management API built with Node.js, Express, and MongoDB. This pro
 - cors (for cross-origin requests)
 
 ---
+## 🔧Instructions for running
+- Clone the repository into your code editor
+- Run npm install in your terminal
+- Run npm run dev
+
+##🌐 **Visit in browser**
+https://taskmanagerapi-xdba.onrender.com/api-docs/#/
+  
