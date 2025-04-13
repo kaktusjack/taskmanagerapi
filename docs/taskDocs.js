@@ -20,39 +20,42 @@
  *         createdAt:
  *           type: string
  *           format: date-time
- *      NewTask:
+ *     NewTask:
  *       type: object
- *      required:
- *        - title
- *       - description
- *      properties:
- *        title:
- *          type: string
- *         description: Title of the task
- *        description:  
- *         type: string
- *        description: Description of the task
- *       UpdateTask:
- *          type: object
- *          properties:
- *              title:
- *                  type: string
- *                  description: Title of the task
- *              description:
- *                  type: string
- *                  description: Description of the task
- *              status:
- *                  type: string
- *                  enum: [pending, in-progress, completed]
- *                 description: Status of the task
- * *        UpdateStatus:
- *              type: object
- *                properties:
- *                  status:
- *                   type: string
- *                   enum: [pending, in-progress, completed]
- *                   description: Status of the task
+ *       required:
+ *         - title
+ *         - description
+ *       properties:
+ *         title:
+ *           type: string
+ *           description: Title of the task
+ *         description:
+ *           type: string
+ *           description: Description of the task
+ *     UpdateTask:
+ *       type: object
+ *       properties:
+ *         title:
+ *           type: string
+ *           description: Title of the task
+ *         description:
+ *           type: string
+ *           description: Description of the task
+ *         status:
+ *           type: string
+ *           enum: [pending, in-progress, completed]
+ *           description: Status of the task
+ *     UpdateStatus:
+ *       type: object
+ *       properties:
+ *         status:
+ *           type: string
+ *           enum: [pending, in-progress, completed]
+ *           description: Status of the task
  */
+
+
+
 /**
  * @swagger
  * /tasks:
