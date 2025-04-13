@@ -12,8 +12,8 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: 'http://localhost:3000',
-                description: 'Development server',
+                url: 'https://taskmanagerapi-xdba.onrender.com/',
+                description: 'Production server',
             },
         ],
          
